@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Murithi Kimathi | portfolio</title>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+        background-color: #f9fafc;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        header{
+            background-color: #004aad;
+            color: white ;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1{
+            font-size: 2.2rem;
+        }
+        nav{
+            background-color: #00367d;
+            text-align: center;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a{
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover{
+            text-decoration: underline;
+        }
+        nav a.active{
+            color: #b347ff;
+            font-weight: bold;
+        }
+        section{
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #004aad;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+        a.project-link {
+            color: #004aad;
+            text-decoration: none;
+        }
+        a.project-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            background-color: #004aad;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        .about-container{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .profile-pic{
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1.2s ease-out;
+        }
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1.2s ease-out;
+        }
+        .show .profile-pic,
+        .show .about-text{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kelvin Murithi Kimathi</h1>
+        <p>Information Technology Student | Developer | freelancer</p>
+    </header>
+    <nav>
+        <a href="#about">About</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#education">Education</a> |
+        <a href="#contacts">Contacts</a>
+    </nav>
+    <section id="about">
+        <h2>About me</h2>
+        <div class="about-container">
+            <img src="kelvin.jpg" alt="Kelvin Murithi Kimathi" class="profile-pic"/>
+            <div class="about-text">
+        <p>Hello I'm <strong>Kelvin Murithi Kimathi</strong> an Information Technology student at Kirinyaga University.
+        I'm passionate about software development, databases, and digital innovation. I enjoy writing practical projects like <em>Number System Converter App</em> and developing database systems in Microsoft Access. </p>
+   </div>
+   </div>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: C,Javascript</li>
+            <li>Mobile App Development: React Native (Expo)</li>
+            <li>Database Management Microsoft Access, SQL</li>
+            <li>Data Entry & Transcription</li>
+            <li>Networking & Troubleshooting</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Number System Converter Offline App</h3>
+            <p>A lightweight Android application that converts numbers between Decimal, Binary, Octal, and Hexadecimal systems and works fully offline.</p>
+            <p><strong>Technologies:</strong> React Native (Expo)</p>
+            <a class="project-link" href="https://github.com/KelvinKim-athi/number-system-converter-offline" target="_blank">View on GitHub </a>
+        </div>
+        <div class="project">
+            <h3>Savings Database System (Ms Access)</h3>
+            <p>A database that tracks monthly savings and computes total contribution  with 5% interest per user. Built with Microsoft Access.</p>
+        </div>
+    </section>
+    <section id="education">
+        <h2>Education & Experience</h2>
+        <p><strong>Bachelor of Science in Information Technology</strong>— Kirinyaga University (Ongoing)</p>
+        <p><strong>Freelance Data Entry & Transcription</strong>—Delivered accurate and well-formatted projects for clients</p>
+    </section>
+    <section id="contacts">
+        <h2>Contact</h2>
+        <p>📧 Email: <a href="mailto:kelvinmurithi3900@gmail.com">kelvinmurithi3900@gmail.com</a></p>
+        <p>💼 GitHub: <a href="https://github.com/KelvinKim-athi" target="_blank">github.com/KelvinKim-athi</a></p>
+        <p>📍 Location: Kenya</p>
+    </section>
+    <footer>
+        <p>© 2025 Kelvin Murithi Kimathi | All Rights Reserved</p>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry)=>{
+                    if(entry.isIntersecting){
+                    navLinks.forEach((link)=>{
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").substring(1).toLowerCase()===entry.target.id.toLocaleLowerCase())
+                    {link.classList.add("active");}
+                });
+              }
+            });
+         },
+        {threshold: 0.6}
+    );
+    sections.forEach((section) => observer.observe(section));
+   const aboutSection = document.querySelector("#about");
+   const observerAbout = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            aboutSection.classList.add("show");
+        }
+    });
+   });
+   observerAbout.observe(aboutSection);
+   </script>
+</body>
+</html>
